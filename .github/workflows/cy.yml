@@ -12,9 +12,9 @@ jobs:
     # let's make sure our tests pass on Chrome browser
     steps:
       - name: Checkout
-      - uses: actions/checkout@v4
+        uses: actions/checkout@v4
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
       - name: Cypress run
-      - uses: cypress-io/github-action@v6
+        uses: cypress-io/github-action@v6
         
