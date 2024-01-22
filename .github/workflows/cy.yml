@@ -13,17 +13,17 @@ jobs:
     steps:
      - name: Cache dependencies
        uses: actions/cache@v2
-          with:
-           path: |
+       with:
+          path: |
                 ~/.npm
-    key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-    restore-keys: |
-      ${{ runner.os }}-node-
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
 
-      - name: Checkout
-        uses: actions/checkout@v4
+     - name: Checkout
+       uses: actions/checkout@v4
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
-      - name: Cypress run
-        uses: cypress-io/github-action@v6
+     - name: Cypress run
+       uses: cypress-io/github-action@v6
         
