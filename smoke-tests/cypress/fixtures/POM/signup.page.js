@@ -11,7 +11,7 @@ class SignupPage{
         this.lastNameInput.type(lastName);
         this.emailInput.type(email);
         this.passwordInput.type(password);
-        this.signupBtn//.click();
+        //this.signupBtn.click();
       };
 }
 
