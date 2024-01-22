@@ -11,6 +11,15 @@ jobs:
     runs-on: ubuntu-latest
     # let's make sure our tests pass on Chrome browser
     steps:
+     - name: Cache dependencies
+       uses: actions/cache@v2
+          with:
+           path: |
+                ~/.npm
+    key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+    restore-keys: |
+      ${{ runner.os }}-node-
+
       - name: Checkout
         uses: actions/checkout@v4
       # Install NPM dependencies, cache them correctly
