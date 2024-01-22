@@ -1,4 +1,5 @@
 name: Cypress tests
+
 on:
   workflow_dispatch:
     inputs:
@@ -6,24 +7,26 @@ on:
         description: ''
   pull_request:
     branches: [main]
+
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
-    # let's make sure our tests pass on Chrome browser
     steps:
-     - name: Cache dependencies
-       uses: actions/cache@v2
-       with:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
           path: |
-                ~/.npm
+            ~/.npm
+            node_modules
           key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
 
-     - name: Checkout
-       uses: actions/checkout@v4
-      # Install NPM dependencies, cache them correctly
-      # and run all Cypress tests
-     - name: Cypress run
-       uses: cypress-io/github-action@v6
-        
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
