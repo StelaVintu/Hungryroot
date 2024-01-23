@@ -11,6 +11,7 @@ class SignupPage{
         this.lastNameInput.type(lastName);
         this.emailInput.type(email);
         this.passwordInput.type(password);
+        //commenting out not to spam the team
         //this.signupBtn.click();
       };
 }

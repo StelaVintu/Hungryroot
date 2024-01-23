@@ -18,9 +18,9 @@ describe("Registration", () => {
   it("Should take the quiz and register account", () => {
     HomePage.quizBtn.click();
     QuizPage.startQuizBtn.click();
-    QuizPage.aboutYouModule();
-    QuizPage.yourTastesModule();
-    QuizPage.yourDailyRoutineModule();
+    QuizPage.answerAboutYouQuestions();
+    QuizPage.answerAllTastesQuestions();
+    QuizPage.answerDailyRoutineQuestions();
     cy.url().should("include", "/building");
     cy.url({ timeout: 10000 }).should("include", "/signup");
     SignupPage.registerAccount(
@@ -29,6 +29,7 @@ describe("Registration", () => {
       userData.email,
       userData.password
     );
+    //commented out since we are not finishing registration
     //cy.url().should('include','/limited-time')
   });
 });

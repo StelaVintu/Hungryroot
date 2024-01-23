@@ -124,8 +124,7 @@ class QuizPage {
     );
   }
 
-
-aboutYouModule(){
+answerAboutYouQuestions(){
     this.mePlusOne.click();
     this.increaseBtn.click();
     this.nextBtn.click();
@@ -144,7 +143,7 @@ aboutYouModule(){
     this.nextBtn.click();
 }
 
-yourTastesModule(){
+answerAllTastesQuestions(){
     this.mediterranianCuisineToggle.click();
     this.mexicanCuisineToggle.click();
     this.nextBtn.click();
@@ -161,7 +160,8 @@ yourTastesModule(){
     this.mildHeatToggle.click();
     this.nextBtn.click();
 }
-yourDailyRoutineModule(){
+
+answerDailyRoutineQuestions(){
     this.eggsForBkfastToggle.click();
     this.nextBtn.click();
     this.frequuencyBtn.click();
